@@ -7,4 +7,16 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  extend:{
+    keyframes:{
+        heroZoom:{
+            "0%,100%":{
+                transform:"scale(1.05)"
+            },
+            "50%":{
+                transform:"scale(1.12)"
+            }
+        }
+    }
+}
 }

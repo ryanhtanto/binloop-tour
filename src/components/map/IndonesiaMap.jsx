@@ -1,4 +1,7 @@
 import indonesiaMap from "../../assets/map/indonesia.svg";
+import sumbar from "../../assets/map/sumbar.svg";
+import bali from "../../assets/map/bali.svg";
+
 
 export default function IndonesiaMap() {
     return (
@@ -12,91 +15,149 @@ export default function IndonesiaMap() {
         >
 
             {/* ================= MOBILE MAP BACKGROUND ================= */}
-
             <div
                 className="
-                absolute
-                inset-0
-                flex
-                items-center
-                justify-center
-                lg:hidden
-                pointer-events-none
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+                    lg:hidden
+                    pointer-events-none
                 "
             >
-
+                {/* Indonesia */}
                 <img
                     src={indonesiaMap}
                     alt=""
                     className="
-                    w-[150%]
-                    max-w-none
-                    object-contain
-                    opacity-[0.5]
-                    rotate-6
-                    scale-110
-                    select-none
+                        absolute
+                        w-[150%]
+                        opacity-30
+                        rotate-6
+                        scale-110
+                        object-contain
                     "
                 />
 
+                {/* Sumbar */}
+                <img
+                    src={sumbar}
+                    alt=""
+                    className="
+                        absolute
+                        w-[150%]
+                        rotate-6
+                        scale-[1.12]
+                        object-contain
+                        drop-shadow-[0_8px_16px_rgba(240,90,39,.6)]
+                        animate-pulse
+                    "
+                />
+
+                {/* Bali */}
+                <img
+                    src={bali}
+                    alt=""
+                    className="
+                        absolute
+                        w-[150%]
+                        rotate-6
+                        scale-[1.12]
+                        object-contain
+                        drop-shadow-[0_8px_16px_rgba(190,107,37,.6)]
+                        animate-pulse
+                    "
+                />
             </div>
 
             {/* ================= CONTENT ================= */}
-
             <div
                 className="
-                relative
-                min-h-screen
-                flex
-                flex-col
-                lg:flex-row
+                    relative
+                    min-h-screen
+                    flex
+                    flex-col
+                    lg:flex-row
                 "
             >
-
                 {/* ================= MAP DESKTOP ================= */}
-
                 <div
                     className="
-                    hidden
-                    lg:flex
-                    relative
-                    w-2/3
-                    items-center
-                    justify-center
+                        hidden
+                        lg:flex
+                        relative
+                        w-2/3
+                        items-center
+                        justify-center
                     "
                 >
 
                     <div
                         className="
-                        relative
-                        w-[90%]
-                        h-[90%]
+                            relative
+                            w-[90%]
+                            h-[90%]
                         "
                     >
-
+                        {/* Indonesia */}
                         <img
                             src={indonesiaMap}
-                            alt="Indonesia Map"
+                            alt=""
                             className="
-                            absolute
-                            inset-0
-                            w-full
-                            h-full
-                            object-contain
+                                absolute
+                                inset-0
+                                w-full
+                                h-full
+                                object-contain
+                                opacity-70
                             "
                         />
 
-                        {/*
-                            Nanti provinsi Sumbar & Bali
-                            yang clickable ditaruh di sini
-                        */}
+                        {/* SUMATERA BARAT */}
+                        <img
+                            src={sumbar}
+                            alt=""
+                            className="
+                                absolute
+                                inset-0
+                                w-full
+                                h-full
+                                object-contain
+                                z-20
+                                left-[8%]
+                                scale-[1.25]
+                                drop-shadow-[0_10px_18px_rgba(240,90,39,.45)]
+                                transition-all
+                                duration-500
+                               
+                            "
+                        />
 
+                        {/* BALI */}
+                        <img
+                            src={bali}
+                            alt=""
+                            className="
+                                absolute
+                                inset-0
+                                w-full
+                                h-full
+                                object-contain
+                                z-20
+                                top-[-8.5%]
+                                left-[2.5%]
+                                scale-[1.5]
+                                drop-shadow-[0_10px_18px_rgba(190,107,37,.45)]
+                                transition-all
+                                duration-500
+                                
+                            "
+                        />
                     </div>
-
                 </div>
 
                 {/* ================= TEXT ================= */}
-
                 <div
                     className="
                     relative
@@ -173,9 +234,7 @@ export default function IndonesiaMap() {
                     </button>
 
                 </div>
-
             </div>
-
         </section>
     );
 }

@@ -7,7 +7,6 @@ import tourLogo from "../../assets/logoBlack.png"
 export default function TourHomePage(){
     return (
         <main>
-            
             <HeroHome />
             <TourHighlight />
             <IndonesiaMap />

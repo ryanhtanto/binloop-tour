@@ -4,10 +4,11 @@ import {
     Route
 } from "react-router-dom";
 import TourHomePage from "../pages/Home/TourHomePage";
-// import EventPage from "../pages/Event/EventPage";
 import { bali2027 } from "../data/bali";
 import { padang2027 } from "../data/padang";
 import Navbar from "../components/layout/Navbar";
+import BaliPage from "../pages/Event/BaliPage";
+import PadangPage from "../pages/Event/PadangPage";
 
 export default function AppRoutes() {
     return (
@@ -20,18 +21,18 @@ export default function AppRoutes() {
                         <TourHomePage />
                     }
                 />
-                {/* <Route
+                <Route
                     path="/bali2027"
                     element={
-                        <EventPage event={bali2027} />
+                        <BaliPage event={bali2027} />
                     }
                 />
                 <Route
                     path="/padang2027"
                     element={
-                        <EventPage event={padang2027} />
+                        <PadangPage event={padang2027} />
                     }
-                /> */}
+                />
             </Routes>
         </BrowserRouter>
     );
