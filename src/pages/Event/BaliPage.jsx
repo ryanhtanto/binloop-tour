@@ -50,7 +50,7 @@ export default function BaliPage() {
             cutOff: "24 Hours",
             image: "/images/xtra.jpeg",
             description:
-                "Sunrise to Sunrise ultra challenge. Push your endurance through continuous loops.",
+                "Sunrise to Sunrise",
 
             pricing: {
                 earlyBird: [
@@ -76,7 +76,7 @@ export default function BaliPage() {
             cutOff: "20 Hours",
             image: "/images/duaratus.jpeg",
             description:
-                "Sunrise to Midnight endurance challenge for ultra runners.",
+                "Sunrise to Midnight",
 
             pricing: {
                 earlyBird: [
@@ -102,7 +102,7 @@ export default function BaliPage() {
             cutOff: "9 Hours",
             image: "/images/satuduapuluh.jpeg",
             description:
-                "Sunrise to Sunset ultra distance with beautiful scenery and challenging terrain.",
+                "Sunrise to Sunset",
 
             pricing: {
                 earlyBird: [
@@ -128,7 +128,7 @@ export default function BaliPage() {
             cutOff: "9 Hours",
             image: "/images/relay.jpeg",
             description:
-                "Run together with your teammates and share the ultra experience.",
+                "Minimum 1 Female",
 
             requirement:
                 "Minimum 1 Female Runner",
@@ -186,7 +186,7 @@ export default function BaliPage() {
                     icon: "👕",
                     title: "Exclusive Finisher Tee",
                     description:
-                        "Available for The Xtra Mile, 200K, 120K and 60K finishers under COT."
+                        "Available for The 24H, 100K, 50K finishers under COT."
                 },
 
             ]

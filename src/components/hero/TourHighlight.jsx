@@ -94,7 +94,7 @@ export default function TourHighlight() {
                         text-gray-400
                         "
                     >
-                        A DIVERSE DESTINATIONS
+                        DIVERSE DESTINATIONS
                     </p>
 
                     <h2

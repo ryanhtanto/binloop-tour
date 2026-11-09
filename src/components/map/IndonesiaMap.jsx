@@ -209,10 +209,7 @@ export default function IndonesiaMap() {
                         leading-8
                         "
                     >
-                        Discover the Binloop Ultra journey
-                        across Indonesia and explore two
-                        unforgettable destinations in
-                        Padang and Bali.
+                        Discover Binloop Ultra journey across Indonesia and experience diverse destinations
                     </p>
 
                     <button
