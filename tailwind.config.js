@@ -17,6 +17,12 @@ module.exports = {
                 transform:"scale(1.12)"
             }
         }
-    }
+    },
+    fontFamily: {
+        goudy: [
+            "Goudy Old Style",
+            "serif"
+        ],
+    },
 }
 }

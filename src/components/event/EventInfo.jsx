@@ -35,6 +35,7 @@ export default function EventInfo({ event }) {
             <CountdownBanner
                 targetDate={event.registrationDate}
                 theme={event.theme}
+                name={event.title}
             />
 
 

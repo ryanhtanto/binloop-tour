@@ -1,6 +1,6 @@
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import baliHero from "../../assets/bali.jpeg";
+import HomeHero from "../../assets/home.jpeg";
 
 export default function HeroHome() {
     return (
@@ -13,133 +13,84 @@ export default function HeroHome() {
                 items-center
             "
         >
-            {/* Background Images */}
-            <div className="
+
+            {/* Background */}
+            <div
+                className="
                 absolute
                 inset-0
-            ">
+                bg-cover
+                bg-center
+                "
+                style={{
+                    backgroundImage: `url(${HomeHero})`
+                }}
+            />
 
-
-                {/* Padang */}
-
-                <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-cover
-                    bg-center
-                    "
-                    style={{
-                        backgroundImage:
-                        `url(${baliHero})`
-                    }}
-                />
-
-
-                {/* Bali */}
-
-                <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-cover
-                    bg-center
-                    mix-blend-multiply
-                    "
-                    style={{
-                        backgroundImage:
-                        `url(${baliHero})`
-                    }}
-                />
-
-
-                {/* White Blend */}
-
-                <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-r
-                    from-white
-                    via-white/70
-                    to-transparent
-                    "
-                />
-
-
-                <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-white/20
-                    "
-                />
-
-            </div>
 
             {/* Content */}
             <Container>
+
                 <div
                     className="
-                        relative
-                        z-10
-                        max-w-4xl
-                        mt-24
-                        lg:mt-32
+                    relative
+                    z-10
+                    max-w-4xl
+                    mt-24
+                    lg:mt-32
                     "
                 >
+
+                    {/* Eyebrow */}
                     <p
                         className="
                         uppercase
-                        tracking-[0.5em]
+                        tracking-[0.15em]
                         text-[#F05A27]
-                        text-sm
-                        font-semibold
+                        text-xl
+                        font-bold
                         "
+                        style={{
+                            fontFamily: "Goudy, serif"
+                        }}
                     >
                         Binloop Ultra Tour 2027
                     </p>
+
+
+
+                    {/* Title */}
                     <h1
                         className="
                         mt-8
                         text-6xl
+                        sm:text-7xl
                         md:text-8xl
+                        lg:text-[110px]
+                        xl:text-[130px]
+                        leading-[0.85]
+                        text-white
                         font-bold
-                        leading-[0.9]
-                        text-[#252525]
+                        uppercase
                         "
+                        style={{
+                            fontFamily: "Goudy, serif"
+                        }}
                     >
-                        THE JOURNEY
+                        Wherever
 
-                        <span
-                            className="
-                            block
-                            text-[#F05A27]
-                            "
-                        >
-                            STARTS HERE
+                        <span className="block">
+                            Miles
+                        </span>
+
+                        <span className="block">
+                            Take You
                         </span>
 
                     </h1>
-                    <p
-                        className="
-                        mt-8
-                        text-2xl
-                        text-gray-600
-                        "
-                    >
-                        Coming To Your Backyard.
-                    </p>
-                    <p
-                        className="
-                        mt-5
-                        max-w-xl
-                        text-gray-500
-                        leading-relaxed
-                        "
-                    >
-                        Two races. Two destinations. One passion for going beyond the finish line.
-                    </p>
+
+
+
                     <div
                         className="
                         mt-10
@@ -148,10 +99,12 @@ export default function HeroHome() {
                         <Button>
                             Explore Tour
                         </Button>
-
                     </div>
+
                 </div>
+
             </Container>
+
         </section>
     );
 }

@@ -686,7 +686,7 @@ export default function EventCategory({
 
 
 
-                    <button
+                    {/* <button
 
                         className="
                         mt-10
@@ -724,7 +724,7 @@ export default function EventCategory({
 
                         Register Now
 
-                    </button>
+                    </button> */}
 
 
 

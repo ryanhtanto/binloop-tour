@@ -120,12 +120,13 @@ export default function Navbar() {
                         className="
                         hidden
                         lg:block
+                        disabled
                         "
                     >
 
                         <Button>
 
-                            Register
+                            COMING SOON
 
                         </Button>
 

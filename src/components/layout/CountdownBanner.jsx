@@ -6,7 +6,8 @@ import {
 
 function CountdownBanner({
     targetDate,
-    theme = {}
+    theme = {},
+    name
 }) {
 
 
@@ -379,7 +380,7 @@ function CountdownBanner({
                             text-white/70
                             "
                         >
-                            Binloop Ultra Tour
+                            Binloop Ultra {name}
                         </p>
 
 
@@ -399,9 +400,9 @@ function CountdownBanner({
                             leading-tight
                             "
                         >
-                            Coming To Your
+                            BEYOND THE 
                             <br/>
-                            Backyard.
+                            DAWN
                         </h3>
 
                     </div>

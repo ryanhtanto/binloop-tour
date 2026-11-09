@@ -94,7 +94,7 @@ export default function TourHighlight() {
                         text-gray-400
                         "
                     >
-                        Two Destinations
+                        A DIVERSE DESTINATIONS
                     </p>
 
                     <h2
@@ -121,44 +121,6 @@ export default function TourHighlight() {
                         gap-8
                     "
                 >
-                    {/* PADANG */}
-                    <div
-                        className="
-                            rounded-3xl
-                            bg-white
-                            border
-                            border-gray-100
-                            shadow-xl
-                            p-8
-                        "
-                    >
-                        <p className=" text-center tracking-widest text-gray-600 mb-0">
-                            03 - 04 APRIL 2027
-                        </p>
-                        <p
-                            className="
-                                uppercase
-                                tracking-[0.5em]
-                                text-gray-400
-                                text-center
-                            "
-                        >
-                            PADANG BEACH
-                        </p>
-                        <img
-                            src={padangLogo}
-                            alt="Binloop Ultra Padang"
-                            className="
-                                mt-4
-                                h-full
-                                w-full
-                                mx-auto
-                                object-contain
-                            "
-                        />
-                        
-                    </div>
-
                     {/* BALI */}
                     <div
                         className="
@@ -192,6 +154,44 @@ export default function TourHighlight() {
                                 w-full
                                 object-contain
                                 mx-auto
+                            "
+                        />
+                        
+                    </div>
+
+                    {/* PADANG */}
+                    <div
+                        className="
+                            rounded-3xl
+                            bg-white
+                            border
+                            border-gray-100
+                            shadow-xl
+                            p-8
+                        "
+                    >
+                        <p className=" text-center tracking-widest text-gray-600 mb-0">
+                            03 - 04 APRIL 2027
+                        </p>
+                        <p
+                            className="
+                                uppercase
+                                tracking-[0.5em]
+                                text-gray-400
+                                text-center
+                            "
+                        >
+                            PADANG BEACH
+                        </p>
+                        <img
+                            src={padangLogo}
+                            alt="Binloop Ultra Padang"
+                            className="
+                                mt-4
+                                h-full
+                                w-full
+                                mx-auto
+                                object-contain
                             "
                         />
                         

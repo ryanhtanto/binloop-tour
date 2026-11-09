@@ -182,21 +182,6 @@ export default function Footer({ logo, copyright }) {
                                 </div>
 
 
-                                <div className="flex gap-3 items-start">
-
-                                    <MapPin
-                                        size={18}
-                                        className="text-[#F05A27] mt-1 shrink-0"
-                                    />
-
-                                    <span className="text-gray-700 leading-relaxed">
-                                        Ruko Kebayoran Square
-                                        <br />
-                                        Jl. Boulevard Bintaro Jaya,
-                                        Tangerang Selatan, Banten
-                                    </span>
-
-                                </div>
 
                             </div>
 

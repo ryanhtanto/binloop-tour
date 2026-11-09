@@ -1,9 +1,10 @@
 import HeroEvent from "../../components/hero/HeroEvent";
 import EventInfo from "../../components/event/EventInfo";
 import baliLogo from "../../assets/baliLogo.png"
-import baliHero from "../../assets/balibg.png"
+import baliHero from "../../assets/balibg.jpeg"
 import Footer from "../../components/layout/Footer";
 import EventCategory from "../../components/event/EventCategory";
+import RaceInfo from "../../components/event/RaceInfo";
 
 
 export default function BaliPage() {
@@ -43,250 +44,195 @@ export default function BaliPage() {
 
     const categories = [
         {
-            id: "xtra",
-            name: "Xtra Miles",
-            distance: "XTRA MILES",
-            cutOff: "40 Hours",
+            id: "24h",
+            name: "24H",
+            distance: "Minimum 10 Loops",
+            cutOff: "24 Hours",
             image: "/images/xtra.jpeg",
             description:
-                "Challenge yourself through the longest Binloop Ultra distance.",
+                "Sunrise to Sunrise ultra challenge. Push your endurance through continuous loops.",
 
             pricing: {
                 earlyBird: [
                     {
                         label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.100.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
 
                 normal: [
                     {
                         label: "Regular",
-                        price: "Rp 1.500.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.200.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.250.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
             },
         },
 
         {
-            id: "200K",
-            name: "200K",
-            distance: "200 KM",
-            cutOff: "40 Hours",
+            id: "100k",
+            name: "100K",
+            distance: "100 KM",
+            cutOff: "20 Hours",
             image: "/images/duaratus.jpeg",
             description:
-                "Experience the ultimate trail adventure.",
+                "Sunrise to Midnight endurance challenge for ultra runners.",
 
             pricing: {
                 earlyBird: [
                     {
                         label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.100.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
 
                 normal: [
                     {
                         label: "Regular",
-                        price: "Rp 1.500.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.200.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.250.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
             },
         },
 
         {
-            id: "120K",
-            name: "120K",
-            distance: "120 KM",
-            cutOff: "22 Hours",
+            id: "50k",
+            name: "50K",
+            distance: "50 KM",
+            cutOff: "9 Hours",
             image: "/images/satuduapuluh.jpeg",
             description:
-                "Perfect distance for experienced ultra runners.",
+                "Sunrise to Sunset ultra distance with beautiful scenery and challenging terrain.",
 
             pricing: {
                 earlyBird: [
                     {
                         label: "Regular",
-                        price: "Rp 1.000.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 900.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 900.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
 
                 normal: [
                     {
                         label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.000.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.050.000",
-                        highlight: true,
+                        price: "TBA",
                     },
                 ],
             },
         },
 
         {
-            id: "60K",
-            name: "60K",
-            distance: "60 KM",
-            cutOff: "10 Hours",
-            image: "/images/enampuluh.jpeg",
-            description:
-                "A fast and exciting ultra distance with stunning scenery.",
-
-            pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 800.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 725.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 725.000",
-                        highlight: true,
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.000.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 800.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 850.000",
-                        highlight: true,
-                    },
-                ],
-            },
-        },
-
-        {
-            id: "12K",
-            name: "12K",
-            distance: "12 KM",
-            cutOff: "3 Hours",
-            image: "/images/duabelas.jpeg",
-            description:
-                "Perfect for beginners who want to experience the Binloop atmosphere.",
-
-            pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 360.000",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 450.000",
-                    },
-                ],
-            },
-        },
-
-        {
-            id: "relay",
-            name: "Relay",
-            distance: "Relay 60 KM",
-            cutOff: "10 Hours",
+            id: "relay50k",
+            name: "Relay 50K",
+            distance: "5 X 10 KM",
+            cutOff: "9 Hours",
             image: "/images/relay.jpeg",
             description:
                 "Run together with your teammates and share the ultra experience.",
 
+            requirement:
+                "Minimum 1 Female Runner",
+
             pricing: {
                 earlyBird: [
                     {
                         label: "Team",
-                        price: "Rp 1.500.000",
+                        price: "TBA",
                     },
                 ],
 
                 normal: [
                     {
                         label: "Team",
-                        price: "Rp 1.800.000",
+                        price: "TBA",
                     },
                 ],
             },
         },
-        
     ];
+
+    const baliRaceInfo = {
+
+        label: "Race Information",
+
+        title: "CAUSE THE WALLS START SHAKING",
+
+        subtitle:
+            "Experience Bali through an unforgettable ultra running adventure.",
+
+
+        included: {
+
+            title: "WHAT'S INCLUDED",
+
+            items: [
+
+                {
+                    icon: "🏃",
+                    title: "Race Tee",
+                    description:
+                        "Provided for all registered participants."
+                },
+
+                {
+                    icon: "🏅",
+                    title: "Finisher Medal",
+                    description:
+                        "Awarded to all finishers under Cut Off Time (COT)."
+                },
+
+
+                {
+                    icon: "👕",
+                    title: "Exclusive Finisher Tee",
+                    description:
+                        "Available for The Xtra Mile, 200K, 120K and 60K finishers under COT."
+                },
+
+            ]
+
+        },
+
+
+        qualification: {
+
+            title: "QUALIFICATION",
+
+            categories: [
+
+                {
+                    cat: "24H",
+                    req:
+                        "Must have previously completed a 50K road race or an equivalent trail race."
+                },
+
+
+                {
+                    cat: "100K",
+                    req:
+                        "Must have previously completed a 50K road race or an equivalent trail race."
+                },
+
+
+                {
+                    cat: "50K",
+                    req:
+                        "Must have previously completed a full marathon road race or an equivalent trail race."
+                },
+
+            ],
+
+
+            allCategories:
+                "All Categories",
+
+
+            minAge:
+                "Minimum Age: 18 Years Old"
+
+        }
+
+    }
 
     return (
         <>
@@ -294,6 +240,10 @@ export default function BaliPage() {
             <EventInfo event={baliEvent} />
             <EventCategory 
                 categories={categories} 
+                theme={baliEvent.theme}
+            />
+            <RaceInfo 
+                data={baliRaceInfo}
                 theme={baliEvent.theme}
             />
             <Footer
