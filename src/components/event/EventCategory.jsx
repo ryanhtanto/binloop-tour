@@ -1,1030 +1,305 @@
-import {
-    useEffect,
-    useRef,
-    useState
-} from "react";
+import React from "react";
 
+export default function EventCategory({ categories, theme = {} }) {
 
-export default function EventCategory({
-    categories,
-    theme = {}
-}) {
-
-
-    const [active, setActive] =
-        useState(categories[0]);
-
-
-    const sliderRef =
-        useRef(null);
-
-
-    const isDragging =
-        useRef(false);
-
-
-    const startX =
-        useRef(0);
-
-
-    const scrollStart =
-        useRef(0);
-
-
-
-    const shadowColor = theme.secondary;
-
-
-
-
-    // ================= MARQUEE =================
-
-    useEffect(() => {
-
-        const slider =
-            sliderRef.current;
-
-
-        if (!slider)
-            return;
-
-
-        const timer =
-            setInterval(() => {
-
-
-                if (!isDragging.current) {
-
-
-                    slider.scrollLeft += 1.5;
-
-
-                    if (
-                        slider.scrollLeft >=
-                        slider.scrollWidth / 3
-                    ) {
-
-                        slider.scrollLeft = 0;
-
-                    }
-
-                }
-
-
-            }, 20);
-
-
-
-        return () =>
-            clearInterval(timer);
-
-
-    }, []);
-
-
-
-
-
-
-    // ================= DRAG =================
-
-
-    const mouseDown = (e) => {
-
-
-        isDragging.current = true;
-
-
-        startX.current =
-            e.pageX -
-            sliderRef.current.offsetLeft;
-
-
-        scrollStart.current =
-            sliderRef.current.scrollLeft;
-
-
-    };
-
-
-
-    const mouseMove = (e) => {
-
-
-        if (!isDragging.current)
-            return;
-
-
-
-        const x =
-            e.pageX -
-            sliderRef.current.offsetLeft;
-
-
-
-        sliderRef.current.scrollLeft =
-            scrollStart.current -
-            ((x - startX.current) * 1.5);
-
-
-    };
-
-
-
-    const mouseUp = () => {
-
-        isDragging.current = false;
-
-    };
-
-
-
-
-
+    const shadowColor = theme.secondary || "#F05A27";
 
     return (
 
-        <section
+        <section className="bg-[#fafafa] py-24 overflow-hidden">
 
-            className="
-            min-h-screen
-            bg-[#fafafa]
-            overflow-hidden
-            flex
-            items-center
-            "
+            <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-        >
+                <div className="space-y-36">
 
+                    {categories.map((item, index) => {
 
-            <div
+                        const reverse = index % 2 === 1;
 
-                className="
-                w-full
-                flex
-                flex-col
-                lg:flex-row
-                "
+                        return (
 
-            >
+                            <div
+                                key={item.id}
+                                className={`
+                                grid
+                                lg:grid-cols-2
+                                gap-16
+                                items-center
+                                ${reverse ? "lg:[&>*:first-child]:order-2" : ""}
+                                `}
+                            >
 
-
-
-
-
-
-                {/* =====================================================
-                    IMAGE MARQUEE
-                ===================================================== */}
-
-
-                <div
-
-                    className="
-                    w-full
-                    lg:w-1/2
-                    overflow-hidden
-                    py-28
-                    "
-
-                >
-
-
-                    <div
-
-                        ref={sliderRef}
-
-                        onMouseDown={mouseDown}
-                        onMouseMove={mouseMove}
-                        onMouseUp={mouseUp}
-                        onMouseLeave={mouseUp}
-
-                        className="
-                        flex
-                        gap-4
-                        overflow-hidden
-                        cursor-grab
-                        active:cursor-grabbing
-                        select-none
-                        "
-
-                    >
-
-
-                        {
-                            [
-                                ...categories,
-                                ...categories,
-                                ...categories
-                            ]
-                            .map((item,index)=>(
-
-
-                                <div
-
-                                    key={index}
-
-                                    onClick={() =>
-                                        setActive(item)
-                                    }
-
-                                    className="
-                                    relative
-                                    shrink-0
-
-                                    w-[280px]
-                                    md:w-[340px]
-
-                                    h-[520px]
-
-                                    cursor-pointer
-                                    "
-
-                                >
-
-
-
-
-
-                                    {/* IMAGE */}
-
+                                <div className="relative">
 
                                     <div
-
-                                        className="
-                                        absolute
-                                        inset-0
-
-                                        overflow-hidden
-
-                                        rounded-3xl
-
-                                        skew-x-[-10deg]
-
-                                        shadow-xl
-
-                                        "
-
+                                        className="overflow-hidden rounded-[32px]"
                                         style={{
-
-                                            boxShadow:
-                                            active.id === item.id
-
-                                            ?
-
-                                            `0 25px 50px ${shadowColor}50`
-
-                                            :
-
-                                            "0 15px 30px rgba(0,0,0,.15)"
-
+                                            boxShadow: `0 30px 70px ${shadowColor}35`
                                         }}
-
                                     >
 
-
                                         <img
-
                                             src={item.image}
-
                                             alt={item.name}
-
-                                            draggable="false"
-
-                                            className={`
-                                            
+                                            className="
                                             w-full
-                                            h-full
-
+                                            h-[560px]
                                             object-cover
-
-                                            skew-x-[10deg]
-
-                                            scale-110
-
-                                            transition-all
+                                            transition
                                             duration-700
-
-
-                                            ${
-                                                active.id === item.id
-
-                                                ?
-
-                                                "opacity-100 scale-[1.15]"
-
-                                                :
-
-                                                "opacity-40"
-                                            }
-
-                                            `}
-
+                                            hover:scale-105
+                                            "
                                         />
 
                                     </div>
 
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent rounded-[32px]" />
 
+                                    <div className="absolute left-8 bottom-8">
 
-
-
-
-
-                                    {/* IMAGE TEXT */}
-
-
-                                    <div
-
-                                        className="
-                                        absolute
-                                        inset-0
-
-                                        flex
-                                        flex-col
-
-                                        justify-end
-
-                                        p-8
-
-                                        "
-
-                                    >
-
-
-                                        <h3
-
-                                            className={`
-                                            text-4xl
-                                            font-black
-                                            uppercase
-
-                                            transition
-
-                                            ${
-                                                active.id === item.id
-
-                                                ?
-
-                                                "text-white drop-shadow-xl"
-
-                                                :
-
-                                                "text-black"
-                                            }
-
-                                            `}
-
-                                        >
-
-                                            {item.name}
-
-                                        </h3>
-
-
-
-
-
-                                        <p
-
-                                            className={`
-                                            mt-2
-
-                                            uppercase
-
-                                            tracking-[0.5em]
-
-                                            text-xs
-
-                                            font-bold
-
-                                            ${
-                                                active.id === item.id
-
-                                                ?
-
-                                                "text-white"
-
-                                                :
-
-                                                "text-black"
-                                            }
-
-                                            `}
-
-                                        >
-
+                                        <p className="text-white uppercase tracking-[0.45em] text-xs font-bold">
                                             {item.distance}
-
                                         </p>
 
-
-
-
-
-                                        <span
-
-                                            className="
-                                            mt-8
-
-                                            inline-flex
-
-                                            w-fit
-
-                                            rounded-full
-
-                                            bg-white
-
-                                            px-7
-
-                                            py-3
-
-                                            text-xs
-
-                                            uppercase
-
-                                            tracking-[0.3em]
-
-                                            font-bold
-
-                                            text-black
-
-                                            "
-
-                                            style={{
-
-                                                boxShadow:
-                                                `0 15px 35px ${shadowColor}80`
-
-                                            }}
-
-                                        >
-
-                                            Price Details
-
-                                        </span>
-
+                                        <h2 className="mt-3 text-white text-6xl font-black uppercase leading-none">
+                                            {item.name}
+                                        </h2>
 
                                     </div>
 
-
-
                                 </div>
-
-
-                            ))
-
-                        }
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-
-
-
-
-                {/* =====================================================
-                    DETAIL
-                ===================================================== */}
-
-
-
-                <div
-
-                    className="
-                    w-full
-                    lg:w-1/2
-
-                    px-8
-                    lg:px-16
-
-                    py-16
-
-                    "
-
-                >
-
-
-
-                    <p
-
-                        className="
-                        uppercase
-
-                        tracking-[0.5em]
-
-                        text-sm
-
-                        font-bold
-
-                        "
-
-                        style={{
-
-                            color:shadowColor
-
-                        }}
-
-                    >
-
-                        Race Category
-
-                    </p>
-
-
-
-
-                    <h2
-
-                        className="
-                        mt-5
-
-                        text-6xl
-
-                        font-black
-
-                        uppercase
-
-                        leading-none
-
-                        "
-
-                    >
-
-                        {active.name}
-
-                    </h2>
-
-
-
-
-                    <p
-
-                        className="
-                        mt-6
-
-                        max-w-xl
-
-                        text-gray-500
-
-                        leading-8
-
-                        "
-
-                    >
-
-                        {active.description}
-
-                    </p>
-
-
-
-
-
-
-
-
-                    {/* DISTANCE + CUTOFF */}
-
-
-
-                    <div
-
-                        className="
-                        mt-8
-
-                        grid
-
-                        grid-cols-2
-
-                        gap-4
-
-                        "
-
-                    >
-
-
-                        <InfoCard
-
-                            title="Distance"
-
-                            value={active.distance}
-
-                            color={shadowColor}
-
-                        />
-
-
-                        <InfoCard
-
-                            title="Cut Off Time"
-
-                            value={active.cutOff}
-
-                            color={shadowColor}
-
-                        />
-
-
-                    </div>
-
-
-
-
-
-
-
-
-                    {/* PRICE */}
-
-
-                    <div
-                        className="
-                            mt-10
-                            grid
-                            grid-cols-1
-                            md:grid-cols-2
-                            gap-6
-                        "
-                    >
-
-
-                        <PriceCard
-
-                            title="Early Bird"
-
-                            data={active.pricing.earlyBird}
-
-                            color={shadowColor}
-
-                        />
-
-
-
-                        <PriceCard
-
-                            title="Normal Price"
-
-                            data={active.pricing.normal}
-
-                            color={shadowColor}
-
-                        />
-
-
-                    </div>
-
-
-
-
-
-
-
-                    {/* <button
-
-                        className="
-                        mt-10
-
-                        w-full
-
-                        rounded-full
-
-                        py-5
-
-                        text-white
-
-                        font-bold
-
-                        uppercase
-
-                        tracking-[0.3em]
-
-                        transition
-
-                        hover:scale-[1.02]
-
-                        "
-
-                        style={{
-
-                            backgroundColor:shadowColor,
-
-                            boxShadow:
-                            `0 20px 40px ${shadowColor}70`
-
-                        }}
-
-                    >
-
-                        Register Now
-
-                    </button> */}
-
-
-
-                </div>
-
-
-
-
-            </div>
-
-
-        </section>
-
-    )
-
-}
-
-
-
-
-
-
-
-
-function InfoCard({
-    title,
-    value,
-    color
-}) {
-
-
-    return (
-
-        <div
-
-            className="
-            bg-white
-
-            rounded-2xl
-
-            p-5
-
-            "
-
-            style={{
-
-                boxShadow:
-                `0 15px 35px ${color}25`
-
-            }}
-
-        >
-
-            <p
-                className="
-                text-xs
-
-                uppercase
-
-                tracking-[0.3em]
-
-                text-gray-400
-                "
-            >
-
-                {title}
-
-            </p>
-
-
-            <h4
-
-                className="
-                mt-2
-
-                text-2xl
-
-                font-black
-
-                "
-
-            >
-
-                {value}
-
-            </h4>
-
-
-        </div>
-
-    )
-
-}
-
-
-
-
-
-
-
-
-
-function PriceCard({
-    title,
-    data,
-    color
-}) {
-
-
-    return (
-
-        <div
-
-            className="
-            rounded-3xl
-
-            bg-white
-
-            p-6
-
-            "
-
-            style={{
-
-                boxShadow:
-                `0 20px 45px ${color}25`
-
-            }}
-
-        >
-
-
-            <h3
-
-                className="
-                uppercase
-
-                tracking-[0.35em]
-
-                text-xs
-
-                font-bold
-
-                text-gray-400
-
-                "
-
-            >
-
-                {title}
-
-            </h3>
-
-
-
-            <div
-
-                className="
-                mt-6
-
-                space-y-4
-
-                "
-
-            >
-
-
-                {
-                    data.map(item=>(
-
-
-                        <div
-
-                            key={item.label}
-
-                            className="
-                            rounded-2xl
-
-                            bg-gray-50
-
-                            p-4
-
-                            "
-
-                        >
-
-
-                            <div
-
-                                className="
-                                flex
-
-                                justify-between
-
-                                gap-4
-
-                                "
-
-                            >
-
 
                                 <div>
 
-
                                     <p
-
                                         className="
-                                        font-bold
-
                                         uppercase
-
+                                        tracking-[0.45em]
+                                        text-sm
+                                        font-bold
                                         "
-
-                                    >
-
-                                        {item.label}
-
-                                    </p>
-
-
-
-                                    {
-                                        item.subtitle &&
-
-                                        <p
-
-                                            className="
-                                            mt-1
-
-                                            text-xs
-
-                                            text-gray-500
-
-                                            "
-
-                                        >
-
-                                            {item.subtitle}
-
-                                        </p>
-
-                                    }
-
-
-                                </div>
-
-
-
-
-
-                                <div
-
-                                    className="
-                                    text-right
-
-                                    "
-
-                                >
-
-
-                                    <p
-
-                                        className="
-                                        font-black
-
-                                        "
-
                                         style={{
-
-                                            color
-
+                                            color: shadowColor
                                         }}
-
                                     >
-
-                                        {item.price}
-
+                                        Race Category
                                     </p>
 
+                                    <h2 className="
+                                        mt-5
+                                        text-5xl
+                                        lg:text-6xl
+                                        font-black
+                                        uppercase
+                                        leading-none
+                                    ">
+                                        {item.name}
+                                    </h2>
+
+                                    <p className="
+                                        mt-6
+                                        text-gray-500
+                                        leading-8
+                                    ">
+                                        {item.description}
+                                    </p>
+
+                                    <div className="
+                                        mt-10
+                                        grid
+                                        grid-cols-2
+                                        gap-5
+                                    ">
+
+                                        <InfoCard
+                                            title="Distance"
+                                            value={item.distance}
+                                            color={shadowColor}
+                                        />
+
+                                        <InfoCard
+                                            title="Cut Off Time"
+                                            value={item.cutOff}
+                                            color={shadowColor}
+                                        />
+
+                                    </div>
+
+                                    <div className="
+                                        mt-10
+                                        grid
+                                        md:grid-cols-2
+                                        gap-6
+                                    ">
+
+                                        <PriceCard
+                                            title="Early Bird"
+                                            data={item.pricing.earlyBird}
+                                            color={shadowColor}
+                                        />
+
+                                        <PriceCard
+                                            title="Normal Price"
+                                            data={item.pricing.normal}
+                                            color={shadowColor}
+                                        />
+
+                                    </div>
 
                                 </div>
-
-
 
                             </div>
 
+                        );
 
+                    })}
 
-                        </div>
-
-
-                    ))
-                }
-
+                </div>
 
             </div>
 
+        </section>
+
+    );
+
+}
+
+function InfoCard({ title, value, color }) {
+
+    return (
+
+        <div
+            className="
+            bg-white
+            rounded-3xl
+            p-6
+            "
+            style={{
+                boxShadow: `0 18px 40px ${color}22`
+            }}
+        >
+
+            <p className="
+                uppercase
+                tracking-[0.35em]
+                text-xs
+                text-gray-400
+                font-bold
+            ">
+                {title}
+            </p>
+
+            <h3 className="
+                mt-3
+                text-3xl
+                font-black
+            ">
+                {value}
+            </h3>
 
         </div>
 
-    )
+    );
+
+}
+
+function PriceCard({ title, data, color }) {
+
+    return (
+
+        <div
+            className="
+            bg-white
+            rounded-3xl
+            p-6
+            "
+            style={{
+                boxShadow: `0 18px 40px ${color}22`
+            }}
+        >
+
+            <h3 className="
+                uppercase
+                tracking-[0.35em]
+                text-xs
+                text-gray-400
+                font-bold
+            ">
+                {title}
+            </h3>
+
+            <div className="
+                mt-6
+                space-y-4
+            ">
+
+                {data.map((item) => (
+
+                    <div
+                        key={item.label}
+                        className="
+                        rounded-2xl
+                        bg-gray-50
+                        p-5
+                        "
+                    >
+
+                        <div className="
+                            flex
+                            justify-between
+                            items-start
+                            gap-5
+                        ">
+
+                            <div>
+
+                                <p className="
+                                    uppercase
+                                    font-bold
+                                ">
+                                    {item.label}
+                                </p>
+
+                                {item.subtitle && (
+
+                                    <p className="
+                                        mt-1
+                                        text-xs
+                                        text-gray-500
+                                    ">
+                                        {item.subtitle}
+                                    </p>
+
+                                )}
+
+                            </div>
+
+                            <div className="text-right">
+
+                                <p
+                                    className="
+                                    text-lg
+                                    font-black
+                                    "
+                                    style={{
+                                        color
+                                    }}
+                                >
+                                    {item.price}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+        </div>
+
+    );
 
 }

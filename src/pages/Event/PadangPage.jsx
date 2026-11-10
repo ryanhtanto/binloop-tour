@@ -4,6 +4,7 @@ import padangLogo from "../../assets/padangLogo.png";
 import padangHero from "../../assets/padangbg.png"
 import Footer from "../../components/layout/Footer";
 import EventCategory from "../../components/event/EventCategory";
+import ComingSoon from "../../components/layout/ComingSoon";
 
 export default function PadangPage() {
     const padangEvent = {
@@ -294,10 +295,15 @@ export default function PadangPage() {
         <>
             <HeroEvent event={padangEvent} />
             <EventInfo event={padangEvent} />
-            <EventCategory 
+            {/* <EventCategory 
                 categories={categories}  
                 theme={padangEvent.theme}
+            /> */}
+            <ComingSoon
+                title="Race Category"
+                theme={padangEvent.theme}
             />
+
             <Footer
                 logo={padangLogo}
                 copyright="Binloop Tour Padang"
