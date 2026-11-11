@@ -10,7 +10,7 @@ export default function PadangPage() {
     const padangEvent = {
         title: "Padang",
         location: "Padang Beach",
-        date: "30 - 31 January 2027",
+        date: "COMING SOON",
         logo: padangLogo,
         heroImage:padangHero,
         categories: [
@@ -294,7 +294,7 @@ export default function PadangPage() {
     return (
         <>
             <HeroEvent event={padangEvent} />
-            <EventInfo event={padangEvent} />
+            {/* <EventInfo event={padangEvent} /> */}
             {/* <EventCategory 
                 categories={categories}  
                 theme={padangEvent.theme}

@@ -7,7 +7,7 @@ import {
     MessageCircle
 } from "lucide-react";
 
-export default function Footer({ logo, copyright }) {
+export default function Footer({ logo, copyright, text, logo1, logo2 }) {
     return (
         <footer
             className="
@@ -96,12 +96,57 @@ export default function Footer({ logo, copyright }) {
                         {/* Brand */}
 
                         <div>
-
                             <img
                                 src={logo}
                                 alt={copyright}
                                 className="h-16 w-auto"
                             />
+
+
+                            {
+                                (logo1 || logo2) && (
+                                    <div
+                                        className="
+                                        mt-8
+                                        flex
+                                        items-center
+                                        gap-6
+                                        "
+                                    >
+
+                                        {
+                                            logo1 && (
+                                                <img
+                                                    src={logo1}
+                                                    alt={copyright}
+                                                    className="
+                                                    h-10
+                                                    w-auto
+                                                    object-contain
+                                                    "
+                                                />
+                                            )
+                                        }
+
+
+                                        {
+                                            logo2 && (
+                                                <img
+                                                    src={logo2}
+                                                    alt={copyright}
+                                                    className="
+                                                    h-10
+                                                    w-auto
+                                                    object-contain
+                                                    "
+                                                />
+                                            )
+                                        }
+
+                                    </div>
+                                )
+                            }
+
 
                             <p
                                 className="

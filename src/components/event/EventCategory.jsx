@@ -104,6 +104,13 @@ export default function EventCategory({ categories, theme = {} }) {
                                         {item.description}
                                     </p>
 
+                                    <p>
+                                        <span className="font-bold text-black">
+                                            Flag-off:
+                                        </span>{" "}
+                                        {item.flagOff}
+                                    </p>
+
                                     <div className="
                                         mt-10
                                         grid
@@ -112,7 +119,7 @@ export default function EventCategory({ categories, theme = {} }) {
                                     ">
 
                                         <InfoCard
-                                            title="Distance"
+                                            title="Loop"
                                             value={item.distance}
                                             color={shadowColor}
                                         />

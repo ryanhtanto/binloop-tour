@@ -168,7 +168,6 @@ export default function RaceInfo({ data, theme }) {
                             className="
                             text-3xl
                             font-black
-                            
                             mb-8
                             "
                         >
@@ -176,9 +175,7 @@ export default function RaceInfo({ data, theme }) {
                         </h3>
 
 
-
                         <div className="space-y-5">
-
 
                             {data.qualification.categories.map((item)=>(
                                 <div key={item.cat}>
@@ -196,10 +193,9 @@ export default function RaceInfo({ data, theme }) {
                                     </div>
 
 
-                                    <p className="/80">
+                                    <p className="">
                                         {item.req}
                                     </p>
-
 
                                 </div>
                             ))}
@@ -238,16 +234,56 @@ export default function RaceInfo({ data, theme }) {
                                 <div
                                     className="
                                     mt-2
-                                    
                                     text-lg
                                     "
                                 >
                                     {data.qualification.minAge}
                                 </div>
 
-
                             </div>
 
+
+
+                            {
+                                data.qualification.relayNote && (
+                                    <div
+                                        className="
+                                        mt-6
+                                        rounded-2xl
+                                        border
+                                        border-white/10
+                                        bg-black/10
+                                        p-5
+                                        "
+                                    >
+
+                                        <div
+                                            className="
+                                            text-sm
+                                            font-black
+                                            uppercase
+                                            tracking-wider
+                                            mb-2
+                                            "
+                                            style={{
+                                                color: theme.secondary
+                                            }}
+                                        >
+                                            Relay Category
+                                        </div>
+
+
+                                        <p className="
+                                            text-sm
+                                            leading-7
+                                            
+                                        ">
+                                            {data.qualification.relayNote}
+                                        </p>
+
+                                    </div>
+                                )
+                            }
 
                         </div>
 
