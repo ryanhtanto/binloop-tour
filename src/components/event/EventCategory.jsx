@@ -120,7 +120,7 @@ export default function EventCategory({ categories, theme = {} }) {
 
                                         <InfoCard
                                             title="Loop"
-                                            value={item.distance}
+                                            value={item.loopInfo}
                                             color={shadowColor}
                                         />
 

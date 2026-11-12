@@ -47,7 +47,7 @@ export default function Rules() {
                     },
                     {
                         title: "Relay Category",
-                        requirementType: "team requirement",
+                        requirementType: "",
                         items: [
                             "Minimum 1 female runner each team.",
                             "Each member of a team minimum 18 years of age by January 30, 2027."
@@ -354,14 +354,13 @@ export default function Rules() {
     ]
             },
 
-
             runnerCancellation: {
                 title: "Racer Cancellation",
 
                 description:
                     "The entry fee is not refundable."
             }
-        }
+    }
     
 
 
@@ -619,7 +618,6 @@ function Qualification({
                                     font-bold
                                     text-xl
                                     text-[#544741]
-                                    mb-4
                                 "
                             >
 
@@ -627,9 +625,18 @@ function Qualification({
 
                             </h3>
 
-
+                            <p
+                                className="
+                                    text-sm
+                                    text-[#544741]
+                                    uppercase
+                                "
+                            >
+                                {category.requirementType}
+                            </p>
                             <ul
                                 className="
+                                    mt-4
                                     space-y-4
                                 "
                             >
