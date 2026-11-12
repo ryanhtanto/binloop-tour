@@ -4,6 +4,7 @@ import { useState } from "react";
 import logo from "../../assets/logoBlack.png"
 import Button from "../ui/Button";
 import MobileMenu from "./MobileMenu";
+import RunnerDropdown from "./RunnerDropdown";
 
 export default function Navbar() {
 
@@ -24,49 +25,73 @@ export default function Navbar() {
         }
     ];
 
+    const runnerMenus = [
+        {
+            title: "Login",
+            url: "/runner/login"
+        },
+        {
+            title: "Runner Entitlement",
+            url: "/runner/entitlement"
+        },
+        {
+            title: "Rules & Regulation",
+            url: "/runner/rules"
+        },
+        {
+            title: "Waiver",
+            url: "/runner/waiver"
+        },
+        {
+            title: "Race Pack Collection",
+            url: "/runner/rpc"
+        },
+        {
+            title: "Loop Guide",
+            url: "/runner/loop-guide"
+        },
+        {
+            title: "Participant",
+            url: "/runner/participant"
+        }
+    ];
+
     return (
 
         <>
+
             <header
                 className="
-                fixed
-                top-6
-                left-1/2
-                -translate-x-1/2
-                z-50
-                w-[92%]
-                max-w-7xl
+                    fixed
+                    top-6
+                    left-1/2
+                    -translate-x-1/2
+                    z-50
+                    w-[92%]
+                    max-w-7xl
                 "
             >
 
                 <div
                     className="
-                    rounded-full
-                    border
-                    border-white/50
-                    bg-white/80
-                    backdrop-blur-xl
-                    shadow-xl
-                    px-8
-                    py-4
-                    flex
-                    items-center
-                    justify-between
+                        rounded-full
+                        border
+                        border-white/50
+                        bg-white/80
+                        backdrop-blur-xl
+                        shadow-xl
+                        px-8
+                        py-4
+                        flex
+                        items-center
+                        justify-between
                     "
                 >
 
-                    {/* Logo */}
-
                     <Link
                         to="/"
-                        className="
-                        flex
-                        items-center
-                        gap-3
-                        "
+                        className="flex items-center"
                     >
-
-                        {/* nanti logo client */}
 
                         <img
                             src={logo}
@@ -76,51 +101,53 @@ export default function Navbar() {
 
                     </Link>
 
-                    {/* Desktop */}
-
                     <nav
                         className="
-                        hidden
-                        lg:flex
-                        items-center
-                        gap-10
+                            hidden
+                            lg:flex
+                            items-center
+                            gap-10
                         "
                     >
 
-                        {menus.map(menu => (
+                        {
 
-                            <NavLink
+                            menus.map(menu => (
 
-                                key={menu.url}
+                                <NavLink
 
-                                to={menu.url}
+                                    key={menu.url}
 
-                                className={({ isActive }) => `
-                                    font-medium
-                                    transition
-                                    ${isActive
-                                        ? "text-[#F05A27]"
-                                        : "text-gray-600 hover:text-[#F05A27]"
-                                    }
-                                `}
+                                    to={menu.url}
 
-                            >
+                                    className={({ isActive }) => `
+                                        font-medium
+                                        transition
+                                        ${
+                                            isActive
+                                                ? "text-[#F05A27]"
+                                                : "text-gray-600 hover:text-[#F05A27]"
+                                        }
+                                    `}
 
-                                {menu.title}
+                                >
 
-                            </NavLink>
+                                    {menu.title}
 
-                        ))}
+                                </NavLink>
+
+                            ))
+
+                        }
+
+                        <RunnerDropdown menus={runnerMenus} />
 
                     </nav>
 
-                    {/* Right */}
-
                     <div
                         className="
-                        hidden
-                        lg:block
-                        disabled
+                            hidden
+                            lg:block
                         "
                     >
 
@@ -132,19 +159,15 @@ export default function Navbar() {
 
                     </div>
 
-                    {/* Mobile */}
-
                     <button
 
                         onClick={() => setOpen(true)}
 
-                        className="
-                        lg:hidden
-                        "
+                        className="lg:hidden"
 
                     >
 
-                        <Menu size={24} />
+                        <Menu size={28} />
 
                     </button>
 
@@ -153,9 +176,15 @@ export default function Navbar() {
             </header>
 
             <MobileMenu
+
                 open={open}
+
                 onClose={() => setOpen(false)}
+
                 menus={menus}
+
+                runnerMenus={runnerMenus}
+
             />
 
         </>
