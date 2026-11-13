@@ -3,6 +3,16 @@ import Button from "../ui/Button";
 import HomeHero from "../../assets/home.jpeg";
 
 export default function HeroHome() {
+    const scrollToTour = () => {
+        const section = document.getElementById("tour");
+
+        if (section) {
+            section.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            });
+        }
+    };
     return (
         <section
             className="
@@ -93,11 +103,11 @@ export default function HeroHome() {
 
                     <div
                         className="
-                        mt-10
-                        mb-10
+                            mt-10
+                            mb-10
                         "
                     >
-                        <Button>
+                        <Button onClick={scrollToTour}>
                             Explore Tour
                         </Button>
                     </div>

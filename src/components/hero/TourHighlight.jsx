@@ -1,6 +1,6 @@
 import padangLogo from "../../assets/padangLogo.png";
 import baliLogo from "../../assets/baliLogo.png";
-
+import { Link } from "react-router-dom";
 
 export default function TourHighlight() {
     return (
@@ -12,6 +12,7 @@ export default function TourHighlight() {
             py-24
             bg-white
             "
+            id="tour"
         >
 
             {/* Center Bloom */}
@@ -122,57 +123,105 @@ export default function TourHighlight() {
                     "
                 >
                     {/* BALI */}
-                    <div
+                    <Link
+                        to="/bali2027"
                         className="
-                            rounded-3xl
-                            bg-white
-                            border
-                            border-gray-100
-                            shadow-xl
-                            p-8
+                        block
+                        rounded-3xl
+                        bg-white
+                        border
+                        border-gray-100
+                        shadow-xl
+                        p-8
+                        transition-all
+                        duration-300
+                        hover:-translate-y-2
+                        hover:shadow-2xl
+                        hover:border-[#be6b25]
                         "
                     >
-                        <p className=" text-center tracking-widest text-gray-600 mb-0">
-                            30 - 31 JANUARY 2027
+                        <p className="text-center tracking-widest text-gray-600 mb-0">
+                        30 - 31 JANUARY 2027
                         </p>
+
                         <p
-                            className="
-                                uppercase
-                                tracking-[0.5em]
-                                text-gray-400
-                                text-center
-                            "
+                        className="
+                            uppercase
+                            tracking-[0.5em]
+                            text-gray-400
+                            text-center
+                        "
                         >
-                            SANUR BEACH
+                        SANUR BEACH
                         </p>
+
                         <img
-                            src={baliLogo}
-                            alt="Binloop Ultra Padang"
-                            className="
-                                mt-4
-                                h-full
-                                w-full
-                                object-contain
-                                mx-auto
-                            "
+                        src={baliLogo}
+                        alt="Binloop Ultra Bali"
+                        className="
+                            mt-4
+                            h-full
+                            w-full
+                            object-contain
+                            mx-auto
+                        "
                         />
-                        
-                    </div>
+                    </Link>
 
                     {/* PADANG */}
-                    <div
+                    <Link
+                        to="/padang2027"
                         className="
+                            relative
+                            block
+                            overflow-hidden
                             rounded-3xl
                             bg-white
                             border
                             border-gray-100
                             shadow-xl
                             p-8
+                            transition-all
+                            duration-300
+                            hover:-translate-y-2
+                            hover:shadow-2xl
+                            hover:border-[#ed1e24]
                         "
                     >
-                        <p className=" text-center tracking-widest text-gray-600 mb-0">
+                        {/* Watermark */}
+                        <div
+                            className="
+                                absolute
+                                inset-0
+                                z-10
+                                flex
+                                items-center
+                                justify-center
+                                bg-white/55
+                                backdrop-blur-[2px]
+                            "
+                        >
+                            <span
+                                className="
+                                    -rotate-12
+                                    text-3xl
+                                    md:text-5xl
+                                    font-black
+                                    uppercase
+                                    tracking-[0.3em]
+                                    text-[#ed1e24]/80
+                                    select-none
+                                    opacity-50
+                                "
+                            >
+                                Coming Soon
+                            </span>
+                        </div>
+
+                        <p className="text-center tracking-widest text-gray-600 mb-0">
                             03 - 04 APRIL 2027
                         </p>
+
                         <p
                             className="
                                 uppercase
@@ -183,6 +232,7 @@ export default function TourHighlight() {
                         >
                             PADANG BEACH
                         </p>
+
                         <img
                             src={padangLogo}
                             alt="Binloop Ultra Padang"
@@ -190,12 +240,11 @@ export default function TourHighlight() {
                                 mt-4
                                 h-full
                                 w-full
-                                mx-auto
                                 object-contain
+                                mx-auto
                             "
                         />
-                        
-                    </div>
+                    </Link>
                 </div>
             </div>
         </section>

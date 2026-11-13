@@ -53,23 +53,21 @@ export default function BaliPage() {
             flagOff: "Saturday, 30 January 2027, 06:00 WITA",
             loopInfo: "Minimum 10 Loops",
             image: "/images/xtra.jpeg",
-            description:
-                "Sunrise to Sunrise",
-
+            description: "Sunrise to Sunrise",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-24-hours",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,250,000",
+                },
+            ],
             },
         },
 
@@ -81,23 +79,21 @@ export default function BaliPage() {
             flagOff: "Saturday, 30 January 2027, 06:00 WITA",
             loopInfo: "10 Loops",
             image: "/images/duaratus.jpeg",
-            description:
-                "Sunrise to Midnight",
-
+            description: "Sunrise to Midnight",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-100k",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,250,000",
+                },
+            ],
             },
         },
 
@@ -109,54 +105,49 @@ export default function BaliPage() {
             flagOff: "Saturday, 30 January 2027, 06:00 WITA",
             loopInfo: "5 Loops",
             image: "/images/satuduapuluh.jpeg",
-            description:
-                "Sunrise to Sunset",
-
+            description: "Sunrise to Sunset",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "TBA",
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 800,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
             },
         },
 
         {
             id: "relay50k",
             name: "Relay 50K",
-            distance: "5 X 10 KM",
+            distance: "5 × 10 KM",
             cutOff: "9 Hours",
             flagOff: "Saturday, 30 January 2027, 06:30 WITA",
-            loopInfo: "5 X 1 Loop",
+            loopInfo: "5 × 1 Loop",
             image: "/images/relay.jpeg",
-            description:
-                "Minimum 1 Female Runner",
-
-            requirement:
-                "Minimum 1 Female Runner",
+            description: "Minimum 1 Female Runner",
+            requirement: "Minimum 1 Female Runner",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k-relay",
 
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Team",
-                        price: "TBA",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Team",
-                        price: "TBA",
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Team",
+                price: "IDR 1,200,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Team",
+                price: "IDR 1,500,000",
+                },
+            ],
             },
         },
     ];
