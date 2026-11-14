@@ -150,13 +150,11 @@ export default function Navbar() {
                             lg:block
                         "
                     >
-
-                        <Button>
-
-                            COMING SOON
-
-                        </Button>
-
+                        <Link to="/bali2027">
+                            <Button>
+                                REGISTER BALI
+                            </Button>
+                        </Link>
                     </div>
 
                     <button

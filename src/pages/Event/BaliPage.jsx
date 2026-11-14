@@ -130,7 +130,7 @@ export default function BaliPage() {
             cutOff: "9 Hours",
             flagOff: "Saturday, 30 January 2027, 06:30 WITA",
             loopInfo: "5 × 1 Loop",
-            image: "/images/relay.jpeg",
+            image: "/images/Relay.jpeg",
             description: "Minimum 1 Female Runner",
             requirement: "Minimum 1 Female Runner",
             registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k-relay",
