@@ -7,8 +7,8 @@ import MobileMenu from "./MobileMenu";
 import RunnerDropdown from "./RunnerDropdown";
 
 export default function Navbar() {
-
     const [open, setOpen] = useState(false);
+    const [openRegister, setOpenRegister] = useState(false);
 
     const menus = [
         {
@@ -144,17 +144,47 @@ export default function Navbar() {
 
                     </nav>
 
-                    <div
-                        className="
-                            hidden
-                            lg:block
-                        "
-                    >
-                        <Link to="/bali2027">
-                            <Button>
-                                REGISTER BALI
-                            </Button>
-                        </Link>
+                    <div className="relative hidden lg:block">
+                            <button
+                                onClick={() => setOpenRegister(!openRegister)}
+                            >
+                                <Button>
+                                    REGISTER <span className="ml-2 text-xs">▼</span>
+                                </Button>
+                            </button>
+
+                            {openRegister && (
+                                <div
+                                    className="
+                                        absolute
+                                        right-0
+                                        mt-2
+                                        w-52
+                                        overflow-hidden
+                                        rounded-xl
+                                        bg-white
+                                        shadow-xl
+                                        border
+                                        z-50
+                                    "
+                                >
+                                    <Link
+                                        to="/bali2027"
+                                        className="block px-5 py-3 hover:bg-orange-50 transition"
+                                        onClick={() => setOpenRegister(false)}
+                                    >
+                                        Bali 2027
+                                    </Link>
+
+                                    <Link
+                                        to="/padang2027"
+                                        className="block px-5 py-3 hover:bg-orange-50 transition"
+                                        onClick={() => setOpenRegister(false)}
+                                    >
+                                        Padang 2027
+                                    </Link>
+                                </div>
+                            )}
                     </div>
 
                     <button

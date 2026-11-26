@@ -15,6 +15,7 @@ export default function BaliPage() {
         location: "Sanur Beach",
         date: "30 - 31 January 2027",
         logo: baliLogo,
+        target: "BEYOND THE DOWN",
         heroImage:baliHero,
         categories: [
             "24H",
@@ -245,6 +246,7 @@ export default function BaliPage() {
             <EventCategory 
                 categories={categories} 
                 theme={baliEvent.theme}
+                registerTrue={true}
             />
             <RaceInfo 
                 data={baliRaceInfo}

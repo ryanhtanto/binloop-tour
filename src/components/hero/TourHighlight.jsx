@@ -189,7 +189,7 @@ export default function TourHighlight() {
                         "
                     >
                         {/* Watermark */}
-                        <div
+                        {/* <div
                             className="
                                 absolute
                                 inset-0
@@ -216,7 +216,7 @@ export default function TourHighlight() {
                             >
                                 Coming Soon
                             </span>
-                        </div>
+                        </div> */}
 
                         <p className="text-center tracking-widest text-gray-600 mb-0">
                             03 - 04 APRIL 2027

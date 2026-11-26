@@ -7,7 +7,8 @@ import {
 function CountdownBanner({
     targetDate,
     theme = {},
-    name
+    name,
+    target
 }) {
 
 
@@ -400,9 +401,7 @@ function CountdownBanner({
                             leading-tight
                             "
                         >
-                            BEYOND THE 
-                            <br/>
-                            DAWN
+                            {target}
                         </h3>
 
                     </div>

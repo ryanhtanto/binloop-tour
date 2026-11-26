@@ -1,17 +1,21 @@
 import HeroEvent from "../../components/hero/HeroEvent";
 import EventInfo from "../../components/event/EventInfo";
 import padangLogo from "../../assets/padangLogo.png";
-import padangHero from "../../assets/padangbg.png"
+import padangHero from "../../assets/bg-padang.jpeg"
 import Footer from "../../components/layout/Footer";
 import EventCategory from "../../components/event/EventCategory";
-import ComingSoon from "../../components/layout/ComingSoon";
+// import ComingSoon from "../../components/layout/ComingSoon";
+import RaceInfo from "../../components/event/RaceInfo";
+import SportPlus from "../../assets/sportplus.png"
+import Oudpro from "../../assets/oudpro.png"
 
 export default function PadangPage() {
     const padangEvent = {
         title: "Padang",
         location: "Padang Beach",
-        date: "COMING SOON",
+        date: "3 - 4 April 2027",
         logo: padangLogo,
+        target: "The Afterglow",
         heroImage:padangHero,
         categories: [
             "24H",
@@ -47,266 +51,224 @@ export default function PadangPage() {
 
     const categories = [
         {
-            id: "xtra",
-            name: "Xtra Miles",
-            distance: "XTRA MILES",
-            cutOff: "40 Hours",
+            id: "24h",
+            name: "24H",
+            distance: "Minimum 10 Loops (100 KM)",
+            cutOff: "24 Hours",
+            flagOff: "Saturday, 3 April 2027, 06:00 WIB",
+            loopInfo: "Minimum 10 Loops",
             image: "/images/xtra.jpeg",
-            description:
-                "Challenge yourself through the longest Binloop Ultra distance.",
-
+            description: "Sunrise to Sunrise",
+            // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-24-hours",
+            registrationUrl: "",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.500.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.200.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.250.000",
-                        highlight: true,
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,250,000",
+                },
+            ],
             },
         },
 
         {
-            id: "200K",
-            name: "200K",
-            distance: "200 KM",
-            cutOff: "40 Hours",
+            id: "100k",
+            name: "100K",
+            distance: "100 KM",
+            cutOff: "20 Hours",
+            flagOff: "Saturday, 3 April 2027, 06:00 WIB",
+            loopInfo: "10 Loops",
             image: "/images/duaratus.jpeg",
-            description:
-                "Experience the ultimate trail adventure.",
-
+            description: "Sunrise to Midnight",
+            // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-100k",
+            registrationUrl: "",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.100.000",
-                        highlight: true,
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.500.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.200.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.250.000",
-                        highlight: true,
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,250,000",
+                },
+            ],
             },
         },
 
         {
-            id: "120K",
-            name: "120K",
-            distance: "120 KM",
-            cutOff: "22 Hours",
+            id: "50k",
+            name: "50K",
+            distance: "50 KM",
+            cutOff: "9 Hours",
+            flagOff: "Saturday, 3 April 2027, 06:00 WIB",
+            loopInfo: "5 Loops",
             image: "/images/satuduapuluh.jpeg",
-            description:
-                "Perfect distance for experienced ultra runners.",
-
+            description: "Sunrise to Sunset",
+            // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k",
+            registrationUrl: "",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.000.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 900.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 900.000",
-                        highlight: true,
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.250.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 1.000.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 1.050.000",
-                        highlight: true,
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Regular",
+                price: "IDR 800,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Regular",
+                price: "IDR 1,000,000",
+                },
+            ],
             },
         },
 
         {
-            id: "60K",
-            name: "60K",
-            distance: "60 KM",
-            cutOff: "10 Hours",
-            image: "/images/enampuluh.jpeg",
-            description:
-                "A fast and exciting ultra distance with stunning scenery.",
-
+            id: "relay50k",
+            name: "Relay 50K",
+            distance: "5 × 10 KM",
+            cutOff: "9 Hours",
+            flagOff: "Saturday, 3 April 2027, 06:30 WIB",
+            loopInfo: "5 × 1 Loop",
+            image: "/images/Relay.jpeg",
+            description: "Minimum 1 Female Runner",
+            requirement: "Minimum 1 Female Runner",
+            // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k-relay",
+            registrationUrl: "",
             pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 800.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 725.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 725.000",
-                        highlight: true,
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 1.000.000",
-                    },
-                    {
-                        label: "Loyalty",
-                        price: "Rp 800.000",
-                        highlight: true,
-                    },
-                    {
-                        label: "Community",
-                        subtitle: "Minimum 5 Runners",
-                        price: "Rp 850.000",
-                        highlight: true,
-                    },
-                ],
-            },
-        },
-
-        {
-            id: "12K",
-            name: "12K",
-            distance: "12 KM",
-            cutOff: "3 Hours",
-            image: "/images/duabelas.jpeg",
-            description:
-                "Perfect for beginners who want to experience the Binloop atmosphere.",
-
-            pricing: {
-                earlyBird: [
-                    {
-                        label: "Regular",
-                        price: "Rp 360.000",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Regular",
-                        price: "Rp 450.000",
-                    },
-                ],
-            },
-        },
-
-        {
-            id: "relay",
-            name: "Relay",
-            distance: "Relay 60 KM",
-            cutOff: "10 Hours",
-            image: "/images/relay.jpeg",
-            description:
-                "Run together with your teammates and share the ultra experience.",
-
-            pricing: {
-                earlyBird: [
-                    {
-                        label: "Team",
-                        price: "Rp 1.500.000",
-                    },
-                ],
-
-                normal: [
-                    {
-                        label: "Team",
-                        price: "Rp 1.800.000",
-                    },
-                ],
+            earlyBird: [
+                {
+                label: "Team",
+                price: "IDR 1,200,000",
+                },
+            ],
+            normal: [
+                {
+                label: "Team",
+                price: "IDR 1,500,000",
+                },
+            ],
             },
         },
     ];
+
+    const padangRaceInfo = {
+
+        label: "Race Information",
+
+        title: "CAUSE THE WALLS START SHAKING",
+
+        subtitle:
+            "Experience Bali through an unforgettable ultra running adventure.",
+
+
+        included: {
+
+            title: "WHAT'S INCLUDED",
+
+            items: [
+
+                {
+                    icon: "🏃",
+                    title: "Race Tee",
+                    description:
+                        "Provided for all registered participants."
+                },
+
+                {
+                    icon: "🏅",
+                    title: "Finisher Medal",
+                    description:
+                        "Awarded to all finishers under Cut Off Time (COT)."
+                },
+
+
+                {
+                    icon: "👕",
+                    title: "Exclusive Finisher Tee",
+                    description:
+                        "Available for The 24H, 100K, 50K finishers under COT."
+                },
+
+            ]
+
+        },
+
+
+        qualification: {
+
+            title: "QUALIFICATION",
+
+            categories: [
+
+                {
+                    cat: "24H",
+                    req:
+                        "Must have previously completed a 50K road race or an equivalent trail race."
+                },
+
+
+                {
+                    cat: "100K",
+                    req:
+                        "Must have previously completed a 50K road race or an equivalent trail race."
+                },
+
+
+                {
+                    cat: "50K",
+                    req:
+                        "Must have previously completed a full marathon road race or an equivalent trail race."
+                },
+
+            ],
+
+
+            allCategories:
+                "All Categories",
+
+
+            minAge:
+                "Minimum Age: 18 Years Old",
+
+            relayNote:
+                "Participants aged 12-17 years old are eligible to participate as team members, subject to submission of a parental consent letter at Race Pack Collection."
+
+        }
+
+    }
     
     return (
         <>
             <HeroEvent event={padangEvent} />
-            {/* <EventInfo event={padangEvent} /> */}
-            {/* <EventCategory 
+            <EventInfo event={padangEvent} />
+            <EventCategory 
                 categories={categories}  
                 theme={padangEvent.theme}
-            /> */}
-            <ComingSoon
-                title="Race Category"
+                registerTrue={false}
+            />
+            <RaceInfo 
+                data={padangRaceInfo}
                 theme={padangEvent.theme}
             />
+            {/* <ComingSoon
+                title="Race Category"
+                theme={padangEvent.theme}
+            /> */}
 
             <Footer
                 logo={padangLogo}
                 copyright="Binloop Tour Padang"
+                logo1={SportPlus}
+                logo2={Oudpro}
             />
         </>
 

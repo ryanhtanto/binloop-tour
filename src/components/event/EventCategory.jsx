@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EventCategory({ categories, theme = {} }) {
+export default function EventCategory({ categories, theme = {}, registerTrue }) {
 
     const shadowColor = theme.secondary || "#F05A27";
 
@@ -152,41 +152,74 @@ export default function EventCategory({ categories, theme = {} }) {
                                         />
 
                                     </div>
-                                    <div className="
-                                        mt-10
-                                        flex
-                                        justify-center
-                                        w-full
-                                    ">
-                                        <a
-                                            href={item.registrationUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                    {
+                                        <div
                                             className="
-                                                inline-flex
-                                                items-center
+                                                mt-10
+                                                flex
                                                 justify-center
-                                                rounded-full
-                                                px-10
-                                                py-4
-                                                text-sm
-                                                font-bold
-                                                uppercase
-                                                tracking-[0.3em]
-                                                text-white
-                                                transition-all
-                                                duration-300
-                                                hover:scale-105
-                                                hover:shadow-xl
                                                 w-full
                                             "
-                                            style={{
-                                                backgroundColor: shadowColor
-                                            }}
                                         >
-                                            Register Now
-                                        </a>
-                                    </div>
+                                            {
+                                                registerTrue ? (
+                                                    <a
+                                                        href={item.registrationUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="
+                                                            inline-flex
+                                                            items-center
+                                                            justify-center
+                                                            rounded-full
+                                                            px-10
+                                                            py-4
+                                                            text-sm
+                                                            font-bold
+                                                            uppercase
+                                                            tracking-[0.3em]
+                                                            text-white
+                                                            transition-all
+                                                            duration-300
+                                                            hover:scale-105
+                                                            hover:shadow-xl
+                                                            w-full
+                                                        "
+                                                        style={{
+                                                            backgroundColor: shadowColor
+                                                        }}
+                                                    >
+                                                        Register Now
+                                                    </a>
+                                                ) : (
+                                                    <div
+                                                        className="
+                                                            inline-flex
+                                                            items-center
+                                                            justify-center
+                                                            rounded-full
+                                                            px-10
+                                                            py-4
+                                                            text-sm
+                                                            font-bold
+                                                            uppercase
+                                                            tracking-[0.3em]
+                                                            text-white
+                                                            w-full
+                                                            cursor-not-allowed
+                                                            opacity-60
+                                                        "
+                                                        style={{
+                                                            backgroundColor: shadowColor
+                                                        }}
+                                                    >
+                                                        Coming Soon
+                                                    </div>
+                                                )
+                                            }
+                                        </div>
+                                    }
+                                    
 
                                 </div>
 

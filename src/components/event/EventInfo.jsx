@@ -36,6 +36,7 @@ export default function EventInfo({ event }) {
                 targetDate={event.registrationDate}
                 theme={event.theme}
                 name={event.title}
+                target={event.target}
             />
 
 
