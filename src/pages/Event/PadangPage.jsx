@@ -60,7 +60,7 @@ export default function PadangPage() {
             image: "/images/xtra.jpeg",
             description: "Sunrise to Sunrise",
             // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-24-hours",
-            registrationUrl: "",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-padang-24-hours",
             pricing: {
             earlyBird: [
                 {
@@ -87,7 +87,7 @@ export default function PadangPage() {
             image: "/images/duaratus.jpeg",
             description: "Sunrise to Midnight",
             // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-100k",
-            registrationUrl: "",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-padang-2027-100k",
             pricing: {
             earlyBird: [
                 {
@@ -114,7 +114,7 @@ export default function PadangPage() {
             image: "/images/satuduapuluh.jpeg",
             description: "Sunrise to Sunset",
             // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k",
-            registrationUrl: "",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-padang-2027-50k",
             pricing: {
             earlyBird: [
                 {
@@ -142,7 +142,7 @@ export default function PadangPage() {
             description: "Minimum 1 Female Runner",
             requirement: "Minimum 1 Female Runner",
             // registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-bali-2027-50k-relay",
-            registrationUrl: "",
+            registrationUrl: "https://sportplus.myr.id/pl/binloop-ultra-padang-2027-50k-relay",
             pricing: {
             earlyBird: [
                 {
@@ -253,7 +253,7 @@ export default function PadangPage() {
             <EventCategory 
                 categories={categories}  
                 theme={padangEvent.theme}
-                registerTrue={false}
+                registerTrue={true}
             />
             <RaceInfo 
                 data={padangRaceInfo}
